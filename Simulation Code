@@ -1,6 +1,6 @@
 import random
 
-defultNum = 10
+defultNum = 1
 #This is a simulation meant to measure how different situations impact the amount of sleep people may get while under certain circumstances such as going on a walk and reading a book once home. earliest sleep time will be at 7, latest sleep time will be at 5 in the morning and everyone will be awake at 7. 
 #The ending printed code should give you your final results of the total average amount of sleep people got along with the random unsuspected things that may have kept people awake.
 
@@ -54,15 +54,18 @@ start = (input("Are you ready to begin?\n[type 'yes' for yes and 'no' for no]:")
 
 if start == "yes":
   print("You chose yes.\n\n")
-  peopleNum = (input("{Please insert the number of people you want in this simulation}:"))
+  peopleNum = int(input('{Please insert the number of people you want in this simulation}'))
   
   def all():
     list = [socialSub(), aloneSub(), healthySub(), eventSub()]
     print(random.choice(list))
     
-  while defultNum <= (int(peopleNum)):
+  while defultNum <= peopleNum:
+    defultNum +=1
     all()
-    
+  if defultNum == peopleNum:
+    print("stop")
+
 else:
   print("Start program again and select 'yes' when ready.")
   
