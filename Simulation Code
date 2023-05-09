@@ -1,0 +1,69 @@
+import random
+
+#This is a simulation meant to measure how different situations impact the amount of sleep people may get while under certain circumstances such as going on a walk and reading a book once home. earliest sleep time will be at 7, latest sleep time will be at 5 in the morning and everyone will be awake at 7. 
+#The ending printed code should give you your final results of the total average amount of sleep people got along with the random unsuspected things that may have kept people awake.
+
+#Note: Should be able to imput percentage of sleep hours everyone got
+
+#Social things will take up around 3.5 hours at least
+social = ['Stayed up at a party', 'Went to the movies', 'Had family night', 'Had a birthday night', 'Were at work', 'Was at a resturant', 'Were babysiting', 'Were at a date', 'At a concert', 'Had a sleepover', 'Went to a cult', 'Murdered somone']
+
+#alone activities will take up 2 hours at least
+alone = ['Were gaming', 'Were drawing', 'Were eating', 'Was binging a show', 'Were playing music', 'Were recording', 'Were editing', 'Were scrolling socials', 'Were summoning something', 'Were reading', 'Had sacrificed someone']
+
+#healthy activities will take up 1 hours at least
+healthy = ['Were walking', 'Were jogging', 'Were running', 'Were biking', 'Were dancing', 'Were stretching', 'Were doing sports', 'Were at the gym']
+
+#these are the random events that may happen that will result in less sleep gained
+events = ["Got sick", "Had a nightmare", "Got too hot or too cold", "Stayed up thinking about past regrets", "Had a surprise visit"]
+
+#given times
+begin = 7
+end = 5
+hoursOfSleep = 13
+
+#Set up your random selections
+def socialSub():
+  print(random.choice(social))
+  global hoursOfSleep
+  hoursOfSleep = hoursOfSleep - 3.5
+  print(hoursOfSleep)
+  
+def aloneSub():
+  print(random.choice(alone))
+  global hoursOfSleep
+  hoursOfSleep = hoursOfSleep - 2
+  print(hoursOfSleep)
+
+def healthySub():
+  print(random.choice(healthy))
+  global hoursOfSleep
+  hoursOfSleep = hoursOfSleep - 1
+  print(hoursOfSleep)
+  
+def eventSub():
+  print(random.choice(events))
+  global hoursOfSleep
+  hoursOfSleep = hoursOfSleep - 0.50
+  print(hoursOfSleep)
+  
+
+#this is an attemp to mix those all together but still get a organized list
+#def all():
+  #list = [socialSub(), aloneSub(), healthySub(), eventSub()]
+  #print(random.choice(list))
+  
+
+#Intro print and simulation start
+print("Welcome to my sleep simulation.\nIn this simulation you will get to see a hopefully enjoyable list of things that may happen causing people to stay awake at night and get less sleep. At the end you will receive the final results\nNote:\nThe earliest people can sleep is at 7:00 P.M. The latest someone can sleep is at 5:00 A.M.")
+start = (input("Are you ready to begin?\n[type 'yes' for yes and 'no' for no]:"))
+
+if start == "yes":
+  print("You chose yes.\n\n")
+  peopleNum = (input("{Please insert the number of people you want in this simulation}:"))
+  #Make sure it loops around for each person before printing the percentage
+  
+
+else:
+  print("Start program again and select 'yes' when ready.")
+  
