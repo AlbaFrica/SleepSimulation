@@ -1,6 +1,6 @@
 import random
 
-defultPeople = 1
+defultNum = 10
 #This is a simulation meant to measure how different situations impact the amount of sleep people may get while under certain circumstances such as going on a walk and reading a book once home. earliest sleep time will be at 7, latest sleep time will be at 5 in the morning and everyone will be awake at 7. 
 #The ending printed code should give you your final results of the total average amount of sleep people got along with the random unsuspected things that may have kept people awake.
 
@@ -21,38 +21,31 @@ events = ["Got sick", "Had a nightmare", "Got too hot or too cold", "Stayed up t
 #given times
 begin = "7:00"
 end = "5:00"
-hoursOfSleep = 13
+hoursOfSleep = 12
 
 #Set up your random selections
 def socialSub():
   print(random.choice(social))
   global hoursOfSleep
   hoursOfSleep = hoursOfSleep - 3.5
-  print(hoursOfSleep)
+  
   
 def aloneSub():
   print(random.choice(alone))
   global hoursOfSleep
   hoursOfSleep = hoursOfSleep - 2
-  print(hoursOfSleep)
+  
 
 def healthySub():
   print(random.choice(healthy))
   global hoursOfSleep
   hoursOfSleep = hoursOfSleep - 1
-  print(hoursOfSleep)
+  
   
 def eventSub():
   print(random.choice(events))
   global hoursOfSleep
   hoursOfSleep = hoursOfSleep - 0.50
-  print(hoursOfSleep)
-  
-
-#this is an attemp to mix those all together but still get a organized list
-#def all():
-  #list = [socialSub(), aloneSub(), healthySub(), eventSub()]
-  #print(random.choice(list))
   
 
 #Intro print and simulation start
@@ -62,10 +55,14 @@ start = (input("Are you ready to begin?\n[type 'yes' for yes and 'no' for no]:")
 if start == "yes":
   print("You chose yes.\n\n")
   peopleNum = (input("{Please insert the number of people you want in this simulation}:"))
-  #Make sure it loops around for each person before printing the percentage
-  while defultPeople < (peopleNum(str)):
-    print("5")
-
+  
+  def all():
+    list = [socialSub(), aloneSub(), healthySub(), eventSub()]
+    print(random.choice(list))
+    
+  while defultNum <= (int(peopleNum)):
+    all()
+    
 else:
   print("Start program again and select 'yes' when ready.")
   
