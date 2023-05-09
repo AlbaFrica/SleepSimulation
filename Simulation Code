@@ -18,8 +18,8 @@ healthy = ['Were walking', 'Were jogging', 'Were running', 'Were biking', 'Were 
 events = ["Got sick", "Had a nightmare", "Got too hot or too cold", "Stayed up thinking about past regrets", "Had a surprise visit"]
 
 #given times
-begin = 7
-end = 5
+begin = "7:00"
+end = "5:00"
 hoursOfSleep = 13
 
 #Set up your random selections
